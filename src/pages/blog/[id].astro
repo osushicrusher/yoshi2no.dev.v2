@@ -1,0 +1,22 @@
+---
+import { fetchBlogs } from "@/fetch";
+import type { Blog } from "@/types";
+import { ContentSection } from "@/components/ContentSection/ContentSection";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const { id } = Astro.params;
+
+export async function getStaticPaths() {
+	const blogs = await fetchBlogs()
+	return blogs.map((blog: Blog) => ({
+        params: {id: blog.id},
+        props: {blog}
+    }))
+}
+
+const {blog} = Astro.props
+---
+
+<BaseLayout>
+    <ContentSection title={blog.title} body={blog.content} category={blog.category.name}/>
+</BaseLayout>

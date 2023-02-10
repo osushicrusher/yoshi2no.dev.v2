@@ -1,8 +1,8 @@
-import type { Tag } from "@/lib/types";
+import type { Tag, TagName } from "@/types";
 
 export type GradientBorderCardProps = {
   dateTime: string;
   href: string;
   title: string;
-  tags: Tag[];
+  tags: TagName[];
 };
