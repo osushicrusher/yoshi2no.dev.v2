@@ -11,10 +11,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@aspida/fetch": "^1.11.0",
     "@astrojs/tailwind": "^3.0.1",
     "astro": "^2.0.6",
     "tailwindcss": "^3.2.4",
-    "zenn-content-css": "^0.1.137"
+    "zenn-content-css": "^0.1.137",
+    "zod": "^3.20.6"
   },
   "devDependencies": {
     "@astrojs/react": "^2.0.2",
