@@ -1,5 +1,5 @@
 import aspida, { FetchConfig } from "@aspida/fetch";
-import api from "@api/$api";
+import api from "@/api/$api";
 
 const fetchConfig: FetchConfig = {
   credentials: "include",
