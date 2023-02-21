@@ -1,10 +1,13 @@
 import aspida, { FetchConfig } from "@aspida/fetch";
-import api from "@/api/$api";
+import microcmsApi from "@/api/microcms/$api";
 
 const fetchConfig: FetchConfig = {
   credentials: "include",
-  baseURL: "api",
   throwHttpErrors: true, // throw an error on 4xx/5xx, default is false
 };
 
-export const client = api(aspida(fetch, fetchConfig));
+const aspidaClient = aspida(fetch, fetchConfig);
+
+export const client = {
+  microcms: microcmsApi(aspidaClient),
+};
